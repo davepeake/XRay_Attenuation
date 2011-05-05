@@ -1,0 +1,496 @@
+<?xml version="1.0"?>
+<glade-interface>
+  <!-- interface-requires gtk+ 2.16 -->
+  <!-- interface-naming-policy project-wide -->
+  <widget class="GtkWindow" id="mainwindow">
+    <property name="width_request">413</property>
+    <property name="visible">True</property>
+    <property name="title" translatable="yes">Simple Attenuation Calculator</property>
+    <signal name="destroy" handler="on_mainwindow_destroy"/>
+    <child>
+      <widget class="GtkVBox" id="vbox1">
+        <property name="visible">True</property>
+        <child>
+          <widget class="GtkMenuBar" id="menubar1">
+            <property name="visible">True</property>
+            <child>
+              <widget class="GtkMenuItem" id="menuitem1">
+                <property name="visible">True</property>
+                <property name="label" translatable="yes">_File</property>
+                <property name="use_underline">True</property>
+                <child>
+                  <widget class="GtkMenu" id="menu1">
+                    <property name="visible">True</property>
+                    <child>
+                      <widget class="GtkImageMenuItem" id="QuitMenuItem">
+                        <property name="label">gtk-quit</property>
+                        <property name="visible">True</property>
+                        <property name="use_underline">True</property>
+                        <property name="use_stock">True</property>
+                        <signal name="activate" handler="on_QuitMenuItem_activate"/>
+                      </widget>
+                    </child>
+                  </widget>
+                </child>
+              </widget>
+            </child>
+            <child>
+              <widget class="GtkMenuItem" id="menuitem4">
+                <property name="visible">True</property>
+                <property name="right_justified">True</property>
+                <property name="label" translatable="yes">_Help</property>
+                <property name="use_underline">True</property>
+                <child>
+                  <widget class="GtkMenu" id="menu3">
+                    <property name="visible">True</property>
+                    <child>
+                      <widget class="GtkImageMenuItem" id="aboutmenuitem">
+                        <property name="label">gtk-about</property>
+                        <property name="visible">True</property>
+                        <property name="use_underline">True</property>
+                        <property name="use_stock">True</property>
+                        <signal name="activate" handler="on_aboutmenuitem_activate"/>
+                      </widget>
+                    </child>
+                  </widget>
+                </child>
+              </widget>
+            </child>
+          </widget>
+          <packing>
+            <property name="expand">False</property>
+            <property name="position">0</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="GtkNotebook" id="notebook1">
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="enable_popup">True</property>
+            <child>
+              <widget class="GtkVBox" id="vbox2">
+                <property name="visible">True</property>
+                <child>
+                  <widget class="GtkHBox" id="hbox2">
+                    <property name="visible">True</property>
+                    <child>
+                      <widget class="GtkLabel" id="label4">
+                        <property name="visible">True</property>
+                        <property name="label" translatable="yes">Material</property>
+                      </widget>
+                      <packing>
+                        <property name="position">0</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <widget class="GtkComboBox" id="element_combo_box">
+                        <property name="visible">True</property>
+                        <property name="items" translatable="yes"></property>
+                      </widget>
+                      <packing>
+                        <property name="position">1</property>
+                      </packing>
+                    </child>
+                  </widget>
+                  <packing>
+                    <property name="position">0</property>
+                  </packing>
+                </child>
+                <child>
+                  <widget class="GtkHBox" id="hbox1">
+                    <property name="visible">True</property>
+                    <child>
+                      <widget class="GtkLabel" id="label5">
+                        <property name="visible">True</property>
+                        <property name="label" translatable="yes">Energy (MeV)</property>
+                      </widget>
+                      <packing>
+                        <property name="position">0</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <widget class="GtkEntry" id="attlen_energy_box">
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="invisible_char">&#x25CF;</property>
+                        <property name="text" translatable="yes">10</property>
+                      </widget>
+                      <packing>
+                        <property name="position">1</property>
+                      </packing>
+                    </child>
+                  </widget>
+                  <packing>
+                    <property name="position">1</property>
+                  </packing>
+                </child>
+                <child>
+                  <widget class="GtkHBox" id="hbox3">
+                    <property name="visible">True</property>
+                    <child>
+                      <widget class="GtkButton" id="attlen_calculate">
+                        <property name="label" translatable="yes">Calculate</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">True</property>
+                        <signal name="clicked" handler="on_attlen_calculate_clicked"/>
+                      </widget>
+                      <packing>
+                        <property name="position">0</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <widget class="GtkEntry" id="attlen_box">
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="invisible_char">&#x25CF;</property>
+                      </widget>
+                      <packing>
+                        <property name="position">1</property>
+                      </packing>
+                    </child>
+                  </widget>
+                  <packing>
+                    <property name="position">2</property>
+                  </packing>
+                </child>
+              </widget>
+            </child>
+            <child>
+              <widget class="GtkLabel" id="label1">
+                <property name="visible">True</property>
+                <property name="label" translatable="yes">Attenuation Length</property>
+              </widget>
+              <packing>
+                <property name="tab_fill">False</property>
+                <property name="type">tab</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkVBox" id="vbox3">
+                <property name="visible">True</property>
+                <child>
+                  <widget class="GtkHBox" id="hbox4">
+                    <property name="visible">True</property>
+                    <child>
+                      <widget class="GtkLabel" id="label6">
+                        <property name="visible">True</property>
+                        <property name="label" translatable="yes">Element:</property>
+                      </widget>
+                      <packing>
+                        <property name="position">0</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <widget class="GtkComboBox" id="element_combo_box2">
+                        <property name="visible">True</property>
+                        <property name="items" translatable="yes"></property>
+                      </widget>
+                      <packing>
+                        <property name="position">1</property>
+                      </packing>
+                    </child>
+                  </widget>
+                  <packing>
+                    <property name="position">0</property>
+                  </packing>
+                </child>
+                <child>
+                  <widget class="GtkHBox" id="hbox5">
+                    <property name="visible">True</property>
+                    <child>
+                      <widget class="GtkLabel" id="label7">
+                        <property name="visible">True</property>
+                        <property name="label" translatable="yes">Thickness (m)</property>
+                      </widget>
+                      <packing>
+                        <property name="position">0</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <widget class="GtkEntry" id="abseff_thickness_entry">
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="invisible_char">&#x25CF;</property>
+                        <property name="text" translatable="yes">140E-6</property>
+                      </widget>
+                      <packing>
+                        <property name="position">1</property>
+                      </packing>
+                    </child>
+                  </widget>
+                  <packing>
+                    <property name="position">1</property>
+                  </packing>
+                </child>
+                <child>
+                  <widget class="GtkHBox" id="hbox6">
+                    <property name="visible">True</property>
+                    <child>
+                      <widget class="GtkLabel" id="label8">
+                        <property name="visible">True</property>
+                        <property name="label" translatable="yes">Energy (MeV)</property>
+                      </widget>
+                      <packing>
+                        <property name="position">0</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <widget class="GtkEntry" id="abseff_energy_entry">
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="invisible_char">&#x25CF;</property>
+                        <property name="text" translatable="yes">10</property>
+                      </widget>
+                      <packing>
+                        <property name="position">1</property>
+                      </packing>
+                    </child>
+                  </widget>
+                  <packing>
+                    <property name="position">2</property>
+                  </packing>
+                </child>
+                <child>
+                  <widget class="GtkHBox" id="hbox7">
+                    <property name="visible">True</property>
+                    <child>
+                      <widget class="GtkButton" id="abseff_calculate">
+                        <property name="label" translatable="yes">Calculate</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">True</property>
+                        <signal name="clicked" handler="on_abseff_calculate_clicked"/>
+                      </widget>
+                      <packing>
+                        <property name="position">0</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <widget class="GtkEntry" id="abseff_eff_entry">
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="invisible_char">&#x25CF;</property>
+                      </widget>
+                      <packing>
+                        <property name="position">1</property>
+                      </packing>
+                    </child>
+                  </widget>
+                  <packing>
+                    <property name="position">3</property>
+                  </packing>
+                </child>
+              </widget>
+              <packing>
+                <property name="position">1</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkLabel" id="label2">
+                <property name="visible">True</property>
+                <property name="label" translatable="yes">Absorption Efficiency</property>
+              </widget>
+              <packing>
+                <property name="position">1</property>
+                <property name="tab_fill">False</property>
+                <property name="type">tab</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkVBox" id="vbox4">
+                <property name="visible">True</property>
+                <child>
+                  <widget class="GtkHBox" id="hbox8">
+                    <property name="visible">True</property>
+                    <child>
+                      <widget class="GtkLabel" id="label">
+                        <property name="visible">True</property>
+                        <property name="label" translatable="yes">Element</property>
+                      </widget>
+                      <packing>
+                        <property name="position">0</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <widget class="GtkComboBox" id="element_combo_box3">
+                        <property name="visible">True</property>
+                        <property name="items" translatable="yes"></property>
+                      </widget>
+                      <packing>
+                        <property name="position">1</property>
+                      </packing>
+                    </child>
+                  </widget>
+                  <packing>
+                    <property name="position">0</property>
+                  </packing>
+                </child>
+                <child>
+                  <widget class="GtkHBox" id="hbox9">
+                    <property name="visible">True</property>
+                    <child>
+                      <widget class="GtkLabel" id="label10">
+                        <property name="visible">True</property>
+                        <property name="label" translatable="yes">Energy (MeV)</property>
+                      </widget>
+                      <packing>
+                        <property name="position">0</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <widget class="GtkEntry" id="efflen_energy_entry">
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="invisible_char">&#x25CF;</property>
+                        <property name="width_chars">7</property>
+                        <property name="text" translatable="yes">10</property>
+                        <property name="xalign">0.029999999329447746</property>
+                      </widget>
+                      <packing>
+                        <property name="position">1</property>
+                      </packing>
+                    </child>
+                  </widget>
+                  <packing>
+                    <property name="position">1</property>
+                  </packing>
+                </child>
+                <child>
+                  <widget class="GtkHBox" id="hbox10">
+                    <property name="visible">True</property>
+                    <child>
+                      <widget class="GtkLabel" id="label11">
+                        <property name="visible">True</property>
+                        <property name="label" translatable="yes">Absorption (%)</property>
+                      </widget>
+                      <packing>
+                        <property name="position">0</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <widget class="GtkEntry" id="efflen_absorption_entry">
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="invisible_char">&#x25CF;</property>
+                        <property name="text" translatable="yes">90</property>
+                      </widget>
+                      <packing>
+                        <property name="position">1</property>
+                      </packing>
+                    </child>
+                  </widget>
+                  <packing>
+                    <property name="position">2</property>
+                  </packing>
+                </child>
+                <child>
+                  <widget class="GtkHBox" id="hbox11">
+                    <property name="visible">True</property>
+                    <child>
+                      <widget class="GtkButton" id="efflen_calculate">
+                        <property name="label" translatable="yes">Calculate</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">True</property>
+                        <property name="xalign">0.56999999284744263</property>
+                        <signal name="clicked" handler="on_efflen_calculate_clicked"/>
+                      </widget>
+                      <packing>
+                        <property name="position">0</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <widget class="GtkEntry" id="efflen_len_entry">
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="invisible_char">&#x25CF;</property>
+                      </widget>
+                      <packing>
+                        <property name="position">1</property>
+                      </packing>
+                    </child>
+                  </widget>
+                  <packing>
+                    <property name="position">3</property>
+                  </packing>
+                </child>
+              </widget>
+              <packing>
+                <property name="position">2</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkLabel" id="label3">
+                <property name="visible">True</property>
+                <property name="xalign">0.49000000953674316</property>
+                <property name="label" translatable="yes">Absorption Length</property>
+              </widget>
+              <packing>
+                <property name="position">2</property>
+                <property name="tab_fill">False</property>
+                <property name="type">tab</property>
+              </packing>
+            </child>
+          </widget>
+          <packing>
+            <property name="position">1</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="GtkStatusbar" id="statusbar1">
+            <property name="visible">True</property>
+            <property name="spacing">1</property>
+            <child>
+              <widget class="GtkLabel" id="statusbarlabel">
+                <property name="visible">True</property>
+                <property name="label" translatable="yes">Status Text</property>
+              </widget>
+              <packing>
+                <property name="position">1</property>
+              </packing>
+            </child>
+          </widget>
+          <packing>
+            <property name="expand">False</property>
+            <property name="position">2</property>
+          </packing>
+        </child>
+      </widget>
+    </child>
+  </widget>
+  <widget class="GtkAboutDialog" id="aboutdialog">
+    <property name="border_width">5</property>
+    <property name="window_position">center-on-parent</property>
+    <property name="type_hint">dialog</property>
+    <property name="has_separator">False</property>
+    <property name="program_name">Simple Attenuation Calc</property>
+    <property name="version">1.0</property>
+    <property name="comments">All data returned by this program is taken
+from the fantastic NIST XCOM photon 
+cross-section database.</property>
+    <property name="website">http://www.nist.gov/physlab/data/xcom/index.cfm</property>
+    <property name="website_label" translatable="yes">NIST XCOM Photon Cross-Section Database</property>
+    <property name="authors">David Peake &lt;dave.peake@gmail.com&gt;</property>
+    <child internal-child="vbox">
+      <widget class="GtkVBox" id="dialog-vbox1">
+        <property name="visible">True</property>
+        <property name="spacing">2</property>
+        <child>
+          <placeholder/>
+        </child>
+        <child internal-child="action_area">
+          <widget class="GtkHButtonBox" id="dialog-action_area1">
+            <property name="visible">True</property>
+            <property name="layout_style">end</property>
+          </widget>
+          <packing>
+            <property name="expand">False</property>
+            <property name="pack_type">end</property>
+            <property name="position">0</property>
+          </packing>
+        </child>
+      </widget>
+    </child>
+  </widget>
+</glade-interface>

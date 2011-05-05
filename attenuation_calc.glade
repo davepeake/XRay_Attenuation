@@ -1,0 +1,231 @@
+<?xml version="1.0"?>
+<glade-interface>
+  <!-- interface-requires gtk+ 2.16 -->
+  <!-- interface-naming-policy project-wide -->
+  <widget class="GtkWindow" id="MainWindow">
+    <property name="visible">True</property>
+    <property name="title" translatable="yes">Attenuation Length Calculator</property>
+    <property name="default_width">600</property>
+    <property name="default_height">400</property>
+    <signal name="destroy" handler="on_MainWindow_destroy"/>
+    <signal name="destroy_event" handler="on_MainWindow_destroy_event"/>
+    <child>
+      <widget class="GtkVBox" id="vbox1">
+        <property name="visible">True</property>
+        <child>
+          <widget class="GtkMenuBar" id="menubar1">
+            <property name="visible">True</property>
+            <child>
+              <widget class="GtkMenuItem" id="menuitem1">
+                <property name="visible">True</property>
+                <property name="label" translatable="yes">_File</property>
+                <property name="use_underline">True</property>
+                <child>
+                  <widget class="GtkMenu" id="menu1">
+                    <property name="visible">True</property>
+                    <child>
+                      <widget class="GtkImageMenuItem" id="SaveImageMenuItem">
+                        <property name="label" translatable="yes">Save Image...</property>
+                        <property name="visible">True</property>
+                        <property name="use_underline">True</property>
+                        <property name="use_stock">False</property>
+                        <signal name="activate" handler="on_SaveImageMenuItem_activate"/>
+                        <child internal-child="image">
+                          <widget class="GtkImage" id="image2">
+                            <property name="visible">True</property>
+                            <property name="stock">gtk-orientation-portrait</property>
+                          </widget>
+                        </child>
+                      </widget>
+                    </child>
+                    <child>
+                      <widget class="GtkImageMenuItem" id="ExportMenuItem">
+                        <property name="label" translatable="yes">Export Data...</property>
+                        <property name="visible">True</property>
+                        <property name="use_underline">True</property>
+                        <property name="use_stock">False</property>
+                        <signal name="activate" handler="on_ExportMenuItem_activate"/>
+                        <child internal-child="image">
+                          <widget class="GtkImage" id="image1">
+                            <property name="visible">True</property>
+                            <property name="stock">gtk-save-as</property>
+                          </widget>
+                        </child>
+                      </widget>
+                    </child>
+                    <child>
+                      <widget class="GtkSeparatorMenuItem" id="separatormenuitem1">
+                        <property name="visible">True</property>
+                      </widget>
+                    </child>
+                    <child>
+                      <widget class="GtkImageMenuItem" id="QuitMenuItem">
+                        <property name="label">gtk-quit</property>
+                        <property name="visible">True</property>
+                        <property name="use_underline">True</property>
+                        <property name="use_stock">True</property>
+                        <signal name="activate_item" handler="on_QuitMenuItem_activate_item"/>
+                        <signal name="activate" handler="on_QuitMenuItem_activate"/>
+                      </widget>
+                    </child>
+                  </widget>
+                </child>
+              </widget>
+            </child>
+            <child>
+              <widget class="GtkMenuItem" id="menuitem4">
+                <property name="visible">True</property>
+                <property name="right_justified">True</property>
+                <property name="label" translatable="yes">_Help</property>
+                <property name="use_underline">True</property>
+                <child>
+                  <widget class="GtkMenu" id="menu3">
+                    <property name="visible">True</property>
+                    <child>
+                      <widget class="GtkImageMenuItem" id="about_menuitem">
+                        <property name="label">gtk-about</property>
+                        <property name="visible">True</property>
+                        <property name="use_underline">True</property>
+                        <property name="use_stock">True</property>
+                        <signal name="activate_item" handler="on_about_menuitem_activate_item"/>
+                        <signal name="activate" handler="on_about_menuitem_activate"/>
+                      </widget>
+                    </child>
+                  </widget>
+                </child>
+              </widget>
+            </child>
+          </widget>
+          <packing>
+            <property name="expand">False</property>
+            <property name="position">0</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="GtkVBox" id="vbox2">
+            <property name="visible">True</property>
+            <child>
+              <widget class="GtkHBox" id="hbox1">
+                <property name="visible">True</property>
+                <child>
+                  <widget class="GtkLabel" id="label1">
+                    <property name="visible">True</property>
+                    <property name="label" translatable="yes">Elements</property>
+                  </widget>
+                  <packing>
+                    <property name="position">0</property>
+                  </packing>
+                </child>
+                <child>
+                  <widget class="GtkEntry" id="ElementText">
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                    <property name="tooltip" translatable="yes">The elements to calculate the attenuation lengths for. 
+Seperate individual elements with commas</property>
+                    <property name="invisible_char">&#x25CF;</property>
+                    <property name="text" translatable="yes">Al</property>
+                  </widget>
+                  <packing>
+                    <property name="position">1</property>
+                  </packing>
+                </child>
+              </widget>
+              <packing>
+                <property name="position">0</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkHBox" id="hbox2">
+                <property name="visible">True</property>
+                <child>
+                  <widget class="GtkLabel" id="label2">
+                    <property name="visible">True</property>
+                    <property name="label" translatable="yes">Specific Energies (MeV)</property>
+                  </widget>
+                  <packing>
+                    <property name="position">0</property>
+                  </packing>
+                </child>
+                <child>
+                  <widget class="GtkEntry" id="EnergiesTest">
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                    <property name="tooltip" translatable="yes">Specific energies to calculate attenuations for.</property>
+                    <property name="invisible_char">&#x25CF;</property>
+                    <property name="text" translatable="yes">0.1,0.3,1.0,10</property>
+                  </widget>
+                  <packing>
+                    <property name="position">1</property>
+                  </packing>
+                </child>
+              </widget>
+              <packing>
+                <property name="position">1</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkButton" id="GetDataButton">
+                <property name="label" translatable="yes">Get Data</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+                <property name="tooltip" translatable="yes">Do It!</property>
+                <signal name="clicked" handler="on_GetDataButton_clicked"/>
+              </widget>
+              <packing>
+                <property name="padding">9</property>
+                <property name="position">2</property>
+              </packing>
+            </child>
+          </widget>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">False</property>
+            <property name="position">1</property>
+          </packing>
+        </child>
+        <child>
+          <placeholder/>
+        </child>
+        <child>
+          <placeholder/>
+        </child>
+      </widget>
+    </child>
+  </widget>
+  <widget class="GtkAboutDialog" id="aboutdialog1">
+    <property name="border_width">5</property>
+    <property name="resizable">False</property>
+    <property name="modal">True</property>
+    <property name="window_position">center-on-parent</property>
+    <property name="type_hint">normal</property>
+    <property name="has_separator">False</property>
+    <property name="program_name">Attenuation Calculator</property>
+    <property name="version">1.0</property>
+    <property name="comments" translatable="yes">Attenuation Calculator uses data from NIST
+XCOM Service. 
+</property>
+    <property name="website">www.ph.unimelb.edu.au</property>
+    <property name="authors">David Peake</property>
+    <child internal-child="vbox">
+      <widget class="GtkVBox" id="dialog-vbox1">
+        <property name="visible">True</property>
+        <property name="spacing">2</property>
+        <child>
+          <placeholder/>
+        </child>
+        <child internal-child="action_area">
+          <widget class="GtkHButtonBox" id="dialog-action_area1">
+            <property name="visible">True</property>
+            <property name="layout_style">end</property>
+          </widget>
+          <packing>
+            <property name="expand">False</property>
+            <property name="pack_type">end</property>
+            <property name="position">0</property>
+          </packing>
+        </child>
+      </widget>
+    </child>
+  </widget>
+</glade-interface>
