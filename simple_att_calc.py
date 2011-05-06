@@ -50,6 +50,10 @@ class appgui:
 			combo2.append_text(el)
 			combo3.append_text(el)
 
+		combo.set_active(0)
+		combo2.set_active(0)
+		combo3.set_active(0)
+	
 		return
 
 	def attlen_calculate_clicked(self,widget):

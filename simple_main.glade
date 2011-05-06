@@ -143,6 +143,7 @@
                       <widget class="GtkEntry" id="attlen_box">
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
+                        <property name="editable">False</property>
                         <property name="invisible_char">&#x25CF;</property>
                       </widget>
                       <packing>
@@ -270,6 +271,7 @@
                       <widget class="GtkEntry" id="abseff_eff_entry">
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
+                        <property name="editable">False</property>
                         <property name="invisible_char">&#x25CF;</property>
                       </widget>
                       <packing>
@@ -404,6 +406,7 @@
                       <widget class="GtkEntry" id="efflen_len_entry">
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
+                        <property name="editable">False</property>
                         <property name="invisible_char">&#x25CF;</property>
                       </widget>
                       <packing>
