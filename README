@@ -15,3 +15,4 @@ There are two seperate programs, each using the included nistxcom.py library.
 ./simple_att_calc.py: A simple program which can be used to calculate single values for attenuation length, absorption efficiency and absorption length (how much material is needed to reduce the X-ray flux by X%)
 
 ./attenuation_calc.py: A plotting tool to see how attenuation length changes with respect to incident energies
+
