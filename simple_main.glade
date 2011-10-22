@@ -6,6 +6,7 @@
     <property name="width_request">413</property>
     <property name="visible">True</property>
     <property name="title" translatable="yes">Simple Attenuation Calculator</property>
+    <property name="resizable">False</property>
     <signal name="destroy" handler="on_mainwindow_destroy"/>
     <child>
       <widget class="GtkVBox" id="vbox1">
@@ -76,7 +77,7 @@
                     <child>
                       <widget class="GtkLabel" id="label4">
                         <property name="visible">True</property>
-                        <property name="label" translatable="yes">Material</property>
+                        <property name="label" translatable="yes">Element:</property>
                       </widget>
                       <packing>
                         <property name="position">0</property>
@@ -202,7 +203,7 @@
                     <child>
                       <widget class="GtkLabel" id="label7">
                         <property name="visible">True</property>
-                        <property name="label" translatable="yes">Thickness (m)</property>
+                        <property name="label" translatable="yes">Thickness (m):</property>
                       </widget>
                       <packing>
                         <property name="position">0</property>
@@ -230,7 +231,7 @@
                     <child>
                       <widget class="GtkLabel" id="label8">
                         <property name="visible">True</property>
-                        <property name="label" translatable="yes">Energy (MeV)</property>
+                        <property name="label" translatable="yes">Energy (MeV):</property>
                       </widget>
                       <packing>
                         <property name="position">0</property>
@@ -308,7 +309,7 @@
                     <child>
                       <widget class="GtkLabel" id="label">
                         <property name="visible">True</property>
-                        <property name="label" translatable="yes">Element</property>
+                        <property name="label" translatable="yes">Element:</property>
                       </widget>
                       <packing>
                         <property name="position">0</property>
@@ -334,7 +335,7 @@
                     <child>
                       <widget class="GtkLabel" id="label10">
                         <property name="visible">True</property>
-                        <property name="label" translatable="yes">Energy (MeV)</property>
+                        <property name="label" translatable="yes">Energy (MeV):</property>
                       </widget>
                       <packing>
                         <property name="position">0</property>
@@ -364,7 +365,7 @@
                     <child>
                       <widget class="GtkLabel" id="label11">
                         <property name="visible">True</property>
-                        <property name="label" translatable="yes">Absorption (%)</property>
+                        <property name="label" translatable="yes">Absorption (%):</property>
                       </widget>
                       <packing>
                         <property name="position">0</property>
@@ -444,6 +445,7 @@
           <widget class="GtkStatusbar" id="statusbar1">
             <property name="visible">True</property>
             <property name="spacing">1</property>
+            <property name="has_resize_grip">False</property>
             <child>
               <widget class="GtkLabel" id="statusbarlabel">
                 <property name="visible">True</property>
