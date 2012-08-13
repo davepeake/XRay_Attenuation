@@ -1,7 +1,7 @@
 Two programs with calculate attenuation lengths of various materials using NIST data.
 And when I say it uses NIST data, it actually scrapes the data from the NIST XCom database with every update so it will need internet access to work.
 
-The densities for all elements are held in densities.dat, a pickle file using densities I found ages ago, so if you're using it for precision work you might want to check they're accurate enough for you.
+The densities for all elements are held in densities.dat, a pickle file using densities I took from Wikipedia ages ago, so if you're using it for precision work you might want to check they're accurate enough for you.
 
 Required Libraries:
 - pygtk
