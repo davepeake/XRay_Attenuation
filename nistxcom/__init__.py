@@ -40,9 +40,9 @@ def getdata(zsym='',znum='',Energies=''):
     fout.close()
     '''
              
-    headers = b[0:12]
+    headers = b[0:13]
 
-    datalines = b[13:len(b)-4]
+    datalines = b[14:len(b)-4]
 
     data = []
     energies = []
